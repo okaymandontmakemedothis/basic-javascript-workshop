@@ -94,6 +94,14 @@ function calculator(operation, num1, num2) {
 }
 
 function repeatString(inputString, numRepetitions) {
+    
+    var newString="";
+    
+    for(var i=0; i<numRepetitions; i++){
+       newString= newString+inputString;
+    }
+    
+    return newString;
 
 }
 
