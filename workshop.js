@@ -1,8 +1,9 @@
 function firstLetter(inputString) {
-    
-    if (inputString === undefined){
+
+    if (inputString === undefined) {
         return undefined
-    }else{
+    }
+    else {
         return inputString[0];
     }
 
@@ -12,35 +13,84 @@ function firstLetter(inputString) {
 
 function lastLetter(inputString) {
     var input;
-     
-      if (inputString === undefined){
+
+    if (inputString === undefined) {
         return undefined
-    }else{
-        input=inputString.length;
-        return inputString[input-1]
+    }
+    else {
+        input = inputString.length;
+        return inputString[input - 1]
     }
 }
 
 function letterAtPosition(inputString, position) {
-    
-     if (inputString === undefined || position ===undefined){
+
+    if (inputString === undefined || position === undefined) {
         return undefined
-    }else{
+    }
+    else {
         return inputString[position];
     }
-    
+
 }
 
 function addTwoNumbers(num1, num2) {
+    if (num1 === undefined || num2 === undefined) {
+        return undefined
+    }
+    else if (typeof num1 != "number" || typeof num2 != "number") {
+        return undefined
+
+    }
+    else {
+
+        return num1 + num2;
+    }
 
 }
 
 function multiplyTwoNumbers(num1, num2) {
+    if (num1 === undefined || num2 === undefined) {
+        return undefined;
+    }
+    else if (typeof num1 != "number" || typeof num2 != "number") {
+        return undefined;
 
+    }
+    else {
+
+        return num1 * num2;
+    }
 }
 
 function calculator(operation, num1, num2) {
 
+    if(typeof num1 != "number" || typeof num2 != "number"){
+        return undefined
+    }else {
+
+        switch (operation) {
+            case "add":
+                return num1 + num2;
+                
+                
+            case "sub":
+               return num1-num2;
+                
+                
+            case "mult":
+                return num1*num2;
+                
+
+            case "div":
+                return num1/num2;
+
+            default:
+                return undefined;
+        }
+
+
+    }
 }
 
 function repeatString(inputString, numRepetitions) {
