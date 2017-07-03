@@ -8,14 +8,27 @@ function firstLetter(inputString) {
 
 }
 
-console.log(test);
+
 
 function lastLetter(inputString) {
-
+    var input;
+     
+      if (inputString === undefined){
+        return undefined
+    }else{
+        input=inputString.length;
+        return inputString[input-1]
+    }
 }
 
 function letterAtPosition(inputString, position) {
-
+    
+     if (inputString === undefined || position ===undefined){
+        return undefined
+    }else{
+        return inputString[position];
+    }
+    
 }
 
 function addTwoNumbers(num1, num2) {
