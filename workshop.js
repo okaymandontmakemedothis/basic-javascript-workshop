@@ -115,11 +115,34 @@ function reverseString(inputString) {
     
     
 }
-console.log(reverseString("how are you"));
+
 
 function longestWord(inputString) {
+    
 
+  
+   var str = inputString.split(" ");
+    var longest = 0;
+    var word = "";
+    if (inputString===""){
+   
+    word="";
+    
+    }else{
+    for (var i = 0; i < str.length ; i++) {
+        if (longest < str[i].length) {
+            longest = str[i].length;
+            word = str[i];
+        }
+    }
+    }
+    return word;
+
+  
 }
+
+console.log(longestWord("The quick brown fox jumped over the lazy dog"));
+
 
 function capitalize(inputString) {
 
