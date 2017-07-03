@@ -8,6 +8,8 @@ function firstLetter(inputString) {
 
 }
 
+console.log(test);
+
 function lastLetter(inputString) {
 
 }
