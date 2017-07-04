@@ -148,11 +148,10 @@ function capitalize(inputString) {
     
     var splitStr = inputString.toLowerCase().split(' ');
    for (var i = 0; i < splitStr.length; i++) {
-       // You do not need to check if i is larger than splitStr length, as your for does that for you
-       // Assign it back to the array
+      
        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
    }
-   // Directly return the joined string
+  
    return splitStr.join(' '); 
 
   
@@ -161,19 +160,74 @@ function capitalize(inputString) {
 }
 
 function sumOfNumbers(arrayOfNumbers) {
+    
+    var sum=0;
+    
+    for(var i in arrayOfNumbers){
+        
+        sum+=arrayOfNumbers[i];
+    }
+    return sum;
 
 }
 
 function uniqueElements(array1, array2) {
 
+    
+    var array3=[];
+    var same=false; 
+    
+    for(var i in array1){
+        same=false;
+        
+        for (var j in array2) {
+            if(array1[i] === array2[j]) {   
+                same=true;
+            }
+            
+        }
+    }
+    
+    
+    return array3;
+
+
 }
 
 function isPalindrome(inputString) {
+    
+    var re = /[^A-Za-z0-9]/g
+    
+    var lowRegStr = inputString.toLowerCase().replace(re, '');
+     
+        console.log(lowRegStr);
+    
+    var reverseStr = lowRegStr.split('').reverse().join(''); 
+     
+    return reverseStr===lowRegStr;
 
+    
 }
 
 function wrapCharacter(inputString) {
-
+    
+    var newStr="";
+   
+    
+    for(var i =0; i<inputString.length; i++){
+        
+        newStr+= inputString[i];   
+        
+        if(i==39){
+            newStr+= "\n"
+        }
+        
+    console.log(newStr);
+     
+        
+    }
+    
+    return newStr;
 }
 
 function wrapWord(inputString) {
