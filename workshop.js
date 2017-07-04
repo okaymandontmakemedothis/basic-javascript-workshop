@@ -72,15 +72,15 @@ function calculator(operation, num1, num2) {
         switch (operation) {
             case "add":
                 return num1 + num2;
-                
-                
+
+
             case "sub":
                return num1-num2;
-                
-                
+
+
             case "mult":
                 return num1*num2;
-                
+
 
             case "div":
                 return num1/num2;
@@ -94,13 +94,13 @@ function calculator(operation, num1, num2) {
 }
 
 function repeatString(inputString, numRepetitions) {
-    
+
     var newString="";
-    
+
     for(var i=0; i<numRepetitions; i++){
        newString= newString+inputString;
     }
-    
+
     return newString;
 
 }
@@ -112,22 +112,22 @@ function reverseString(inputString) {
         newString= newString+inputString[i];
     }
     return newString;
-    
-    
+
+
 }
 
 
 function longestWord(inputString) {
-    
 
-  
+
+
    var str = inputString.split(" ");
     var longest = 0;
     var word = "";
     if (inputString===""){
-   
+
     word="";
-    
+
     }else{
     for (var i = 0; i < str.length ; i++) {
         if (longest < str[i].length) {
@@ -138,26 +138,26 @@ function longestWord(inputString) {
     }
     return word;
 
-  
+
 }
 
 
 
 
 function capitalize(inputString) {
-    
+
     var splitStr = inputString.toLowerCase().split(' ');
    for (var i = 0; i < splitStr.length; i++) {
        // You do not need to check if i is larger than splitStr length, as your for does that for you
        // Assign it back to the array
-       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
    }
    // Directly return the joined string
-   return splitStr.join(' '); 
+   return splitStr.join(' ');
 
-  
-    
-    
+
+
+
 }
 
 function sumOfNumbers(arrayOfNumbers) {
@@ -165,11 +165,22 @@ function sumOfNumbers(arrayOfNumbers) {
 }
 
 function uniqueElements(array1, array2) {
-
+  if (array1.constructor !== Array || array2.constructor !== Array)
+    return undefined;
+  return (
+    array1.filter(function(x) {
+      return array2.indexOf(x) == -1;
+    })
+    .concat(array2.filter(function(x) {
+      return array1.indexOf(x) == -1;
+    })
+  ));
 }
 
 function isPalindrome(inputString) {
-
+  let inputString1 = inputString.toLowerCase().replace(/[^a-z]/g, '')
+  let inputString2 = inputString1.split('').reverse().join('');
+  return inputString1 === inputString2;
 }
 
 function wrapCharacter(inputString) {
@@ -180,8 +191,22 @@ function wrapWord(inputString) {
 
 }
 
-function bubbleSort(arrayOfNumbers) {
-
+function bubbleSort(a) {
+  if (a.length > 0) {
+    var swapped;
+    do {
+      swapped = false;
+      for (var i=0; i < a.length-1; i++) {
+          if (a[i] > a[i+1]) {
+              var temp = a[i];
+              a[i] = a[i+1];
+              a[i+1] = temp;
+              swapped = true;
+          }
+      }
+    } while (swapped);
+  }
+  return a;
 }
 
 /***** DO NOT EDIT AFTER THIS LINE *****/
