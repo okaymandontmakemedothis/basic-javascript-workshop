@@ -212,27 +212,137 @@ function isPalindrome(inputString) {
 function wrapCharacter(inputString) {
     
     var newStr="";
-   
     
-    for(var i =0; i<inputString.length; i++){
+    console.log('inputString', inputString);
+    
+      for(var i =0; i<inputString.length; i++){
         
-        newStr+= inputString[i];   
-        
-        if(i==39){
-            newStr+= "\n"
+          
+         
+         
+        if(i===0){
+           newStr+=inputString[i];
         }
         
-    console.log(newStr);
-     
+        else if(i%40===0){
+            
+            
+            console.log("consol:",inputString[i])
+            
+            if(inputString[i]!=" "){
+            newStr+=inputString[i];
+            
+            
+            }
+            newStr+='\n';
+            
+        }
+        else{
+          newStr+=inputString[i];
+        }
+        
+   
         
     }
-    
+    console.log("newstr", newStr)
+        
     return newStr;
+
 }
+
+
+
 
 function wrapWord(inputString) {
+    
+     var newStr="";
+     
+     var wrap= "";
+     
+    
+    
+      for(var i =0; i<inputString.length; i++){
+        
+        if(i===0){
+           wrap+=inputString[i];
+        }
+        
+        else if(i%40===0){
+            
+            if(wrap.length<=40){
+                newStr+= wrap;
+                wrap= "";
+                
+            }
+            
+            else if(i<41){
+                newStr += wrap;
+                wrap= "";
+                
+            }
+            
+            else{
+                newStr+="\n"+wrap;
+                wrap="";
+            }
+            
+            
+            if(inputString[i]!=" "){
+            newStr+=inputString[i];
+            
+            }
+            newStr+='\n';
+            
+        }
+        else{
+          wrap +=inputString[i];
+        }
+        
+   
+        
+    }
+    console.log("newstr", newStr)
+        
+    return newStr;
 
 }
+//     var str="";
+//     var wrap="";
+    
+//     for(var i=0 ; i < inputString.length; i++){
+        
+        
+        
+//         if(inputString[i]!= " "){
+//             wrap += inputString[i];
+            
+//             if(wrap.length===39){
+//                 str += "\n";
+                
+//                 str += wrap;
+//                 wrap=""
+                
+//                 str += "\n";
+//             }
+            
+//         }else{
+//             str+= wrap+ " ";
+            
+//             wrap="";
+//         }
+        
+// 'the increased productivity fostered by a friendly environment and quality tools is essential to meet ever increasing demands for '
+// 'the increased productivity fostered by a\nfriendly environment and quality tools\nis essential to meet ever increasing\ndemands for software.'      
+        
+//     }
+//         console.log(str);
+    
+//     return str;
+    
+    
+}
+
+
 
 function bubbleSort(arrayOfNumbers) {
 
